@@ -1,8 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp_dev/login1.dart';
 
 class MyLogin extends StatefulWidget {
+  const MyLogin({Key? key}) : super(key: key);
+
   @override
   _MyLoginState createState() => _MyLoginState();
 }
@@ -11,7 +12,7 @@ class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/logins.jpg'), fit: BoxFit.cover
           )
@@ -23,43 +24,61 @@ class _MyLoginState extends State<MyLogin> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    SizedBox(height: 50,),
+                    const SizedBox(height: 50,),
                     Image.asset('assets/logos.png'),
-                    SizedBox(height: 180,),
-                    FlatButton(
+                    const SizedBox(height: 100,),
+                    ElevatedButton(
                         onPressed: (){
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>MyLogin1()),
+                            MaterialPageRoute(builder: (context)=>const MyLogin1()),
                           );
                         },
-                        minWidth: double.infinity,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                        color: Colors.black87,
-                        padding: EdgeInsets.all(12),
-                        child: Text('SIGN IN', style: TextStyle(
-                            color: Colors.white,
-                            fontSize:15,
-                            fontWeight: FontWeight.bold
-                        ),)
+                      child: const Text('SIGN IN'),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black87,
+                        onPrimary: Colors.white,
+                        padding: const EdgeInsets.all(10.0),
+                        minimumSize: const Size(300, 30),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      )
                     ),
-                    SizedBox(height: 5,),
-                    FlatButton(
-                        onPressed: (){},
-                        minWidth: double.infinity,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                        color: Colors.black87,
-                        padding: EdgeInsets.all(12),
-                        child: Text('SIGN UP', style: TextStyle(
-                            color: Colors.white,
-                            fontSize:15,
-                            fontWeight: FontWeight.bold
-                        ),
+                    const SizedBox(height: 15,),
+                    ElevatedButton(
+                        onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>const MyLogin1()),
+                          );
+                        },
+                        child: const Text('Are you a Traveller?'),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black87,
+                          onPrimary: Colors.white,
+                          padding: const EdgeInsets.all(10.0),
+                          minimumSize: const Size(300, 30),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                         )
-                    )
+                    ),
+                    const Text('OR', style: TextStyle(
+                        color: Colors.white,
+                        fontSize:20,
+                        fontWeight: FontWeight.bold
+                    ),
+                    ),
+                    ElevatedButton(
+                        onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>const MyLogin1()),
+                          );
+                        },
+                        child: const Text('Are you a Travel Agency?'),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black87,
+                          onPrimary: Colors.white,
+                          padding: const EdgeInsets.all(10.0),
+                          minimumSize: const Size(300, 30),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        )
+                    ),
                   ],
                 ),
               ],
